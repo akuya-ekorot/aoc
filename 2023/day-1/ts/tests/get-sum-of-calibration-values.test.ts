@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, test } from "bun:test";
-import readInput from "../readInput";
-import getSumOfCalibrationValues from "../getSumOfCalibrationValues";
+import readInput from "../read-input";
+import getSumOfCalibrationValues from "../get-sum-of-calibration-values";
 
 let input: string[];
 

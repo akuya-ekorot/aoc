@@ -1,4 +1,4 @@
-import getCalibrationValue from "./getCalibrationValue";
+import getCalibrationValue from "./get-calibration-value";
 
 type GetSumOfCalibrationValues = (input: string[]) => number;
 

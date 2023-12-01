@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, test } from "bun:test";
-import filterDigits from "../filterDigits";
+import filterDigits from "../filter-digits";
 
 describe("filterDigits", () => {
   test("finds spelled digits", () => {

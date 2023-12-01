@@ -1,4 +1,4 @@
-import filterDigits from "./filterDigits";
+import filterDigits from "./filter-digits";
 
 type GetCalibrationValue = (line: string) => number;
 

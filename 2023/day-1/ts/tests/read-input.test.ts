@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, test } from "bun:test";
-import readInput from "../readInput.ts";
+import readInput from "../read-input.ts";
 
 let fileName: string;
 let result: string[];

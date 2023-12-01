@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, test } from "bun:test";
-import getCalibrationValue from "../getCalibrationValue";
+import getCalibrationValue from "../get-calibration-value";
 
 describe("get calibration value", () => {
   test("returns number", () => {
