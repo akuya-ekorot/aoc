@@ -1,11 +1,7 @@
-import getCalibrationValue from "./getCalibrationValue.v1";
+import getSumOfCalibrationValues from "./getSumOfCalibrationValues";
 import readInput from "./readInput";
 
 const input = await readInput("input.txt");
+const sum = getSumOfCalibrationValues(input);
 
-const calibrationValueSum = input.reduce(
-  (p, c) => p + getCalibrationValue(c),
-  0,
-);
-
-console.log(calibrationValueSum);
+console.log(sum);

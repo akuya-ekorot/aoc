@@ -1,9 +1,7 @@
-import filterDigits from "./filterDigits";
-
 type GetCalibrationValue = (line: string) => number;
 
 const getCalibrationValue: GetCalibrationValue = (line) => {
-  const numbers = filterDigits(line, []);
+  const numbers = line.split("").filter((c) => !isNaN(+c));
 
   return Number(numbers[0] + numbers[numbers.length - 1]);
 };
