@@ -1,0 +1,5 @@
+const RED_CUBES = 12;
+const GREEN_CUBES = 13;
+const BLUE_CUBES = 14;
+
+export { RED_CUBES, GREEN_CUBES, BLUE_CUBES };
