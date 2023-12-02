@@ -1,34 +1,39 @@
 import spelledDigits from "./spelled-digit";
 
 const filterDigits: FilterDigits = (line, digits) => {
-  let spell = false;
+  let isSpelling = false;
   let spelledDigit = "";
 
   for (let i = 0; i < line.length; i++) {
-    if (!isNaN(+line[i])) {
-      digits.push(line[i]);
-      spell = false;
-      spelledDigit = "";
-    } else if (!spell && spelledDigits.isPrefix(line[i])) {
-      spell = true;
-      spelledDigit += line[i];
-    } else if (spell && spelledDigits.isPrefix(spelledDigit + line[i])) {
-      if (spelledDigits.search(spelledDigit + line[i])) {
-        digits.push(getDigit[spelledDigit + line[i]].toString());
+    const isNumber = !isNaN(+line[i]);
+    const isSpelledDigitPrefix = spelledDigits.isPrefix(spelledDigit + line[i]);
+    const isSpelledDigitValid = spelledDigits.search(spelledDigit + line[i]);
+    const isCharPrefix = spelledDigits.isPrefix(line[i]);
 
-        spell = false;
-        spelledDigit = "";
+    if (isNumber) {
+      digits.push(line[i]);
+      isSpelling = false;
+      spelledDigit = "";
+    } else if (!isSpelling && isSpelledDigitPrefix) {
+      isSpelling = true;
+      spelledDigit += line[i];
+    } else if (isSpelling && isSpelledDigitPrefix) {
+      if (isSpelledDigitValid) {
+        digits.push(getDigit[spelledDigit + line[i]].toString());
+        if (isCharPrefix) {
+          isSpelling = true;
+          spelledDigit = line[i];
+        } else {
+          isSpelling = false;
+          spelledDigit = "";
+        }
       } else {
         spelledDigit += line[i];
       }
-    } else if (
-      spell &&
-      !spelledDigits.isPrefix(spelledDigit + line[i]) &&
-      spelledDigits.isPrefix(line[i])
-    ) {
+    } else if (isSpelling && !isSpelledDigitPrefix && isCharPrefix) {
       spelledDigit = line[i];
     } else {
-      spell = false;
+      isSpelling = false;
       spelledDigit = "";
     }
   }

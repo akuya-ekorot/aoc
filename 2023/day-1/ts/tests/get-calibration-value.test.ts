@@ -20,5 +20,6 @@ describe("get calibration value", () => {
     expect(getCalibrationValue("4nineeightseven2")).toBe(42);
     expect(getCalibrationValue("zoneight234")).toBe(14);
     expect(getCalibrationValue("7pqrstsixteen")).toBe(76);
+    expect(getCalibrationValue("oneightwoneight")).toBe(18);
   });
 });
