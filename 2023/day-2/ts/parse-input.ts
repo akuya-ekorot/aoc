@@ -1,5 +1,3 @@
-import readInput from "./read-input";
-
 export type Set = {
   red: number | null;
   green: number | null;
