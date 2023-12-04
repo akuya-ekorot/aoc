@@ -10,16 +10,16 @@ describe("find-full-number", () => {
   });
 
   test("finds full number", () => {
-    const { number, range } = findFullNumber({ x: 0, y: 0 }, matrix);
+    const { number, i } = findFullNumber({ x: 0, y: 0 }, matrix);
 
     expect(number).toBe(467);
-    expect(range).toEqual({ x1: 0, x2: 3 });
+    expect(i).toEqual(3);
   });
 
   test("finds full number", () => {
-    const { number, range } = findFullNumber({ x: 6, y: 2 }, matrix);
+    const { number, i } = findFullNumber({ x: 6, y: 2 }, matrix);
 
     expect(number).toBe(633);
-    expect(range).toEqual({ x1: 6, x2: 9 });
+    expect(i).toEqual(9);
   });
 });

@@ -16,6 +16,6 @@ export function findFullNumber(
 
   return {
     number: +num,
-    range: { x1: pos.x, x2: i },
+    i,
   };
 }
